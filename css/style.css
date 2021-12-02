@@ -1,4 +1,9 @@
-/* Background image of whole window */
+/*
+   Adjusting body
+   Setting background image of whole window
+   Positioning contents in the center
+   Setting fonts
+*/
 body {
     background-image: url('../img/Background.jpg');
     background-attachment: fixed;
@@ -30,7 +35,10 @@ h2 {
     background-color: #ffffff5c
 }
 
-
+/*
+   Applying row-direction Flex display to the middle windows container
+   Positions information-form and prediction-part next to each other horizontally
+*/
 .hor-container {
     display: flex;
     flex-direction: row;
@@ -40,7 +48,10 @@ h2 {
 }
 
 
-/* Style for the  */
+/*
+   Style for two vertical parts of middle window
+   Applying column-direction Flex display
+*/
 .ver-container {
     margin: 0;
     display: flex;
@@ -74,12 +85,16 @@ h2 {
     border-color: #5581e0;
 }
 
+/* dotted-border box to show saved results */
 #saved-answer-box {
     border: 2px dotted rgb(134, 128, 134);
     padding: 5px;
 }
 
-
+/*
+   A box for showing messages to the user
+   It is not visible unless needed and appears at the bottom of the middle window
+*/
 #message-part {
     display: none;
     background: #ede4f570;
