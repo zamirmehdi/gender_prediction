@@ -1,8 +1,96 @@
-/*setting Background image*/
+/* Background image of whole window */
 body {
     background-image: url('../img/Background.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    align-self: center;
+    justify-content: center;
+    font-family: 'Tahoma', sans-serif;
 }
+
+/* Remove margin-top of header2 */
+h2 {
+    margin-top: 0;
+}
+
+/* Adjust Result paragraphs font-size */
+.result {
+    font-size: small;
+}
+
+/* Style for the box in the middle of the main window */
+.middle {
+    width: fit-content;
+    margin: 15% auto;
+    padding: 40px;
+    border: 2px solid rgb(98 92 98);
+    border-radius: 25px;
+    background-color: #ffffff5c
+}
+
+
+.hor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+
+/* Style for the  */
+.ver-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Style for buttons with 50% of its parent width and transition colors */
+.button {
+    width: 50%;
+    margin: 5px auto;
+    background-color: #e5f2ff;
+    border: 1px solid transparent;
+    /*border-color: #839599;*/
+    padding: .375rem .75rem;
+    border-radius: .25em;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.button:focus {
+    color: #000;
+    background-color: #d8d2ff;
+    border-color: #6f6e77;
+    box-shadow: 0 0 0 .15rem #b2a9fa;
+}
+
+.button:hover {
+    background-color: #e9fdff;
+    border-color: #5581e0;
+}
+
+#saved-answer-box {
+    border: 2px dotted rgb(134, 128, 134);
+    padding: 5px;
+}
+
+
+#message-part {
+    display: none;
+    background: #ede4f570;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 2px solid #bb96a9;
+    color: #b56363;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    min-height: 2em;
+}
+
