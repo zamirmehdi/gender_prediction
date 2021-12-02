@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mr. or Ms.?</title>
+</head>
+
+<body>
+<div id="main-window" class="main">
+
+    <div id="content-window" class="main">
+
+        <div id="form-part" class="container">
+            <form name="information-form">
+                <h2>Mr. or Ms.?</h2>
+                <div id="information-window" class="content">
+
+                    <div class="form-item">
+                        <label for="Name">Name:</label>
+                        <input type="text" id="Name" name="Name" value="" size="20" maxlength="255">
+                    </div>
+                    <div class="form-item">
+                        <!--                        <legend>University Grade</legend>-->
+                        <input type="radio" id="male-radio" name="gender" value="male">
+                        <label for="male-radio">Male</label>
+                    </div>
+                    <div class="form-item">
+                        <input type="radio" id="female-radio" name="gender" value="female">
+                        <label for="female-radio">Female</label>
+                    </div>
+                    <div class="form-item">
+                        <input id="submit" name="submit-button" class="form-item button" type="button" value="submit">
+                        <!--onclick="submitRequest()"-->
+                    </div>
+                    <div class="form-item">
+                        <input id="save" name="save-button" class="form-item button" type="button" value="save">
+                        <!--onclick="submitRequest()"-->
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div id="prediction-part" class="content">
+            <div>
+                <h2> Prediction </h2>
+                <p> Gender: <span id="gender-result" class="information-item"></span></p>
+                <p> Probability(%): <span id="probability-result" class="information-item"></span></p>
+            </div>
+            <div id="saved-answer-box">
+                <h2> Saved Answer </h2>
+                <p id="saved-result"></p>
+                <div class="form-item">
+                    <input id="clear" name="save-button" class="form-item button" type="button" value="save">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
