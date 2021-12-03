@@ -1,24 +1,24 @@
 const url = "https://api.genderize.io/";
 
+/**
+ * returns selected radio element (male or female)
+ * if there is no selected radio; returns null
+ * @returns {*}
+ */
 function getSelectedRadio() {
     let radioElements = document.getElementsByName('gender')
 
     for (let element of radioElements) {
         if (element.checked) return element.value
     }
-    return tempGender
+    return null
 }
 
-// async function sendRequest(name) {
-//     let requestString = (url + "?name=" + name).toString();
-//     try {
-//         let response = await fetch(requestString);
-//         console.log(response)
-//         return response
-//     } catch (err) {
-//         printMessage("Error in connection!")
-//     }
-// }
+
+/**
+ * clears results of gender prediction
+ * and removes(hides) saved-answer-box from window
+ */
 function clearResults() {
     printMessage(null)
 
@@ -35,6 +35,11 @@ function clearResults() {
     document.getElementById('saved-answer-box').style.display = "none";
 }
 
+
+/**
+ * unselects radio selectors
+ * and saves the last selected radio in tempGender global variable
+ */
 function clearRadios() {
     let radioElements = document.getElementsByName('gender')
     for (let element of radioElements) {
@@ -46,6 +51,14 @@ function clearRadios() {
     }
 }
 
+
+/**
+ * gets a name
+ * and if there is a saved answer for it in the local storage
+ * then reveals saved-answer-box and prints answer in the box
+ * else removes the box
+ * @param name
+ */
 function showSavedAnswer(name) {
     tempName = name;
     if (localStorage.getItem(name) != null) {
@@ -57,6 +70,17 @@ function showSavedAnswer(name) {
     }
 }
 
+
+/**
+ * gets a name
+ * send a request to the url with the name as a parameter
+ * fetches the response and extracts the json
+ * if there is any prediction; prints predicted gender and its percentage
+ * otherwise prints a reasonable message
+ * and if the connection fails; prints Error
+ * finally setups saved-answer-box if possible
+ * @param name
+ */
 function sendRequest(name) {
     let requestString = (url + "?name=" + name).toString()
 
@@ -79,6 +103,12 @@ function sendRequest(name) {
 }
 
 
+/**
+ * gets a string message
+ * if message is null; closes message box
+ * otherwise makes it visible and prints the message
+ * @param msg
+ */
 function printMessage(msg) {
     const msg_box = document.getElementById("message-part");
 
@@ -90,6 +120,14 @@ function printMessage(msg) {
     }
 }
 
+
+/**
+ * gets the input string as name
+ * controls the regex and its length
+ * if name is not valid; prints a reasonable message
+ * @param name
+ * @returns {boolean}
+ */
 function formatCheck(name) {
     if (!/^[a-zA-Z\s]*$/.test(name) === true) {
         printMessage("Not valid characters for name!")
@@ -102,6 +140,13 @@ function formatCheck(name) {
     return true
 }
 
+
+/**
+ * reacts to click action on submit button
+ * prevents default action of button
+ * extracts name from input and if it's in a valid format then sends the request
+ * @param event
+ */
 function onSubmit(event) {
     // Preventing submit button from default action.
     event.preventDefault();
@@ -114,6 +159,17 @@ function onSubmit(event) {
     }
 }
 
+
+/**
+ * reacts to click action on save button
+ * prevents default action of button
+ * closes the message box
+ * adds name and gender to local storage
+ * shows saved answer in saved answer box
+ * prints a message
+ * clears selected radios
+ * @param event
+ */
 function onSave(event) {
     // Preventing submit button from default action.
     event.preventDefault();
@@ -132,6 +188,14 @@ function onSave(event) {
     }
 }
 
+
+/**
+ * reacts to click action on clear button
+ * prevents default action of button
+ * removes name and gender from local storage
+ * prints a message
+ * @param event
+ */
 function onClear(event) {
     // Preventing submit button from default action.
     event.preventDefault();
