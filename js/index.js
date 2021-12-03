@@ -134,7 +134,7 @@ function formatCheck(name) {
         return false
     }
     if (name.length > 255 || name.length < 1) {
-        printMessage("Name can have 1 to 255 characters.")
+        printMessage("Name should have 1 to 255 characters.")
         return false
     }
     return true
