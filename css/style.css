@@ -25,7 +25,12 @@ h2 {
     font-size: small;
 }
 
-/* Style for the box in the middle of the main window */
+/*
+   Style for the box in the middle of the main window
+   Setting colors of background and border
+   40px padding for better appearance
+   border radius for curvy corners
+*/
 .middle {
     width: fit-content;
     margin: 15% auto;
@@ -36,8 +41,9 @@ h2 {
 }
 
 /*
-   Applying row-direction Flex display to the middle windows container
+   Applying row-direction Flex display to the middle-window's container
    Positions information-form and prediction-part next to each other horizontally
+   Setting 50px gap between two vertical containers
 */
 .hor-container {
     display: flex;
@@ -51,6 +57,7 @@ h2 {
 /*
    Style for two vertical parts of middle window
    Applying column-direction Flex display
+   Setting 50px gap between items
 */
 .ver-container {
     margin: 0;
@@ -61,32 +68,33 @@ h2 {
     gap: 10px;
 }
 
-/* Style for buttons with 50% of its parent width and transition colors */
+/*
+   Style for buttons with 50% of its parent width and transition colors
+   border radius for curvy corners
+   padding for better appearance
+*/
 .button {
     width: 50%;
     margin: 5px auto;
     background-color: #e5f2ff;
-    /*border: 1px solid transparent;*/
     /*border-color: #839599;*/
     border: 1px solid transparent;
     border-radius: .3em;
     padding: .3rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-/*.button:focus {*/
-/*    color: #000;*/
-/*    background-color: #d8d2ff;*/
-/*    border-color: #6f6e77;*/
-/*    box-shadow: 0 0 0 .15rem #b2a9fa;*/
-/*}*/
-
+/* Style for buttons when mouse goes on it */
 .button:hover {
     background-color: #e9fdff;
     border-color: #5581e0;
 }
 
-/* dotted-border box to show saved results */
+/*
+   dotted-border box to show saved results
+   padding for better appearance
+   invisible by default
+*/
 #saved-answer-box {
     display: none;
     border: 2px dotted rgb(134, 128, 134);
@@ -94,8 +102,13 @@ h2 {
 }
 
 /*
-   A box for showing messages to the user
+   A box for showing messages or errors to the user
    It is not visible unless needed and appears at the bottom of the middle window
+   Setting different font-family and font-size and font-weight
+   Brighter transparent background
+   padding for better appearance
+   border radius for curvy corners
+   A minimum height for better appearance
 */
 #message-part {
     display: none;
