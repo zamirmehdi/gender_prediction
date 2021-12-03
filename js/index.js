@@ -19,8 +19,22 @@ function getSelectedRadio() {
 //         printMessage("Error in connection!")
 //     }
 // }
-function clearPage() {
+function clearResults() {
     printMessage(null)
+
+    let radioElements = document.getElementsByName('gender')
+    for (let element of radioElements) {
+        if (element.checked) {
+            tempGender = element.value
+        }
+    }
+
+    document.getElementById('gender-result').innerHTML = null;
+    document.getElementById('probability-result').innerHTML = null;
+    document.getElementById('saved-answer-paragraph').innerHTML = null;
+}
+
+function clearRadios() {
     let radioElements = document.getElementsByName('gender')
     for (let element of radioElements) {
 
@@ -29,14 +43,12 @@ function clearPage() {
         }
         element.checked = false;
     }
-    document.getElementById('gender-result').innerHTML = null;
-    document.getElementById('probability-result').innerHTML = null;
-    document.getElementById('saved-answer-paragraph').innerHTML = null;
 }
 
 function showSavedAnswer(name) {
     let savedAnswer = document.getElementById('saved-answer-paragraph')
     savedAnswer.innerHTML = localStorage.getItem(name);
+    tempName = name;
 }
 
 function sendRequest(name) {
@@ -87,7 +99,7 @@ function formatCheck(name) {
 function onSubmit(event) {
     // Preventing submit button from default action.
     event.preventDefault();
-    clearPage()
+    clearResults();
 
     const name = document.getElementById('Name').value;
     const validName = formatCheck(name)
@@ -107,9 +119,19 @@ function onSave(event) {
 
     if (selectedGender != null && validName) {
         localStorage.setItem(name, selectedGender);
+        console.log(localStorage)
         showSavedAnswer(name)
         printMessage(name + " saved as a " + selectedGender);
-        console.log(localStorage)
+        clearRadios()
     }
+}
 
+function onClear(event) {
+    // Preventing submit button from default action.
+    event.preventDefault();
+
+    localStorage.removeItem(tempName);
+    console.log(localStorage)
+    showSavedAnswer(tempName)
+    printMessage("Gender of " + tempName + " Cleared!");
 }
