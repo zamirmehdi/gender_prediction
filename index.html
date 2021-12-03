@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Mr. or Ms.?</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -28,11 +29,12 @@
                     <label for="female-radio">Female</label>
                 </div>
                 <div class="form-item">
-                    <input id="submit" name="submit-button" class="button" type="button"
-                           value="submit">
+                    <input id="submit" name="submit-button" class="button" type="button" value="submit"
+                           onclick="onSubmit(event)">
                 </div>
-                <div class="form-item">
-                    <input id="save" name="save-button" class="button" type="button" value="save">
+                <div class=" form-item">
+                    <input id="save" name="save-button" class="button" type="button" value="save"
+                           onclick="onSave(event)">
                 </div>
             </form>
 
@@ -46,14 +48,16 @@
                     <h2> Saved Answer </h2>
                     <p class="result"></p>
                     <div class="form-item">
-                        <input id="clear" name="save-button" class="button" type="button" value="save">
+                        <input id="clear" name="save-button" class="button" type="button" value="save"
+                               onclick="onClear(event)">
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div id="message-part"></div>
+        <div id="message-part"> salam
+        </div>
 
     </div>
 </div>
