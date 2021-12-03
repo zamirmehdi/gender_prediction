@@ -32,6 +32,7 @@ function clearResults() {
     document.getElementById('gender-result').innerHTML = null;
     document.getElementById('probability-result').innerHTML = null;
     document.getElementById('saved-answer-paragraph').innerHTML = null;
+    document.getElementById('saved-answer-box').style.display = "none";
 }
 
 function clearRadios() {
@@ -46,9 +47,14 @@ function clearRadios() {
 }
 
 function showSavedAnswer(name) {
-    let savedAnswer = document.getElementById('saved-answer-paragraph')
-    savedAnswer.innerHTML = localStorage.getItem(name);
     tempName = name;
+    if (localStorage.getItem(name) != null) {
+        document.getElementById('saved-answer-box').style.display = "block";
+        let savedAnswer = document.getElementById('saved-answer-paragraph')
+        savedAnswer.innerHTML = localStorage.getItem(name);
+    } else {
+        document.getElementById('saved-answer-box').style.display = "none";
+    }
 }
 
 function sendRequest(name) {
