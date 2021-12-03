@@ -30,9 +30,9 @@ h2 {
     width: fit-content;
     margin: 15% auto;
     padding: 40px;
-    border: 2px solid rgb(98 92 98);
+    border: 2px solid rgb(139 139 139 / 37%);
     border-radius: 25px;
-    background-color: #ffffff5c
+    background-color: #ffffff69
 }
 
 /*
@@ -66,19 +66,20 @@ h2 {
     width: 50%;
     margin: 5px auto;
     background-color: #e5f2ff;
-    border: 1px solid transparent;
+    /*border: 1px solid transparent;*/
     /*border-color: #839599;*/
-    padding: .375rem .75rem;
-    border-radius: .25em;
+    border: 1px solid transparent;
+    border-radius: .3em;
+    padding: .3rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.button:focus {
-    color: #000;
-    background-color: #d8d2ff;
-    border-color: #6f6e77;
-    box-shadow: 0 0 0 .15rem #b2a9fa;
-}
+/*.button:focus {*/
+/*    color: #000;*/
+/*    background-color: #d8d2ff;*/
+/*    border-color: #6f6e77;*/
+/*    box-shadow: 0 0 0 .15rem #b2a9fa;*/
+/*}*/
 
 .button:hover {
     background-color: #e9fdff;
@@ -97,13 +98,15 @@ h2 {
 */
 #message-part {
     display: none;
-    background: #ede4f570;
+    font-family: monospace;
+    background: rgb(255 253 254 / 58%);
     padding: 8px;
     margin-top: 20px;
     border-radius: 15px;
-    border: 2px solid #bb96a9;
-    color: #b56363;
-    font-size: small;
+    /*border: 2px solid #bb96a9;*/
+    border: 1px solid transparent;
+    color: #df4d75;
+    font-size: medium;
     font-weight: bold;
     text-align: center;
     min-height: 2em;
